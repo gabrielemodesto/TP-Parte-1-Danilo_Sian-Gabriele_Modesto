@@ -10,3 +10,5 @@ typedef struct {
 
 void carrega_partidas(BDPartidas *bdp, BDTimes *bdt, char *caminho);
 void consulta_partidas(BDPartidas *bdp, BDTimes *bdt, char *nome, int modo);
+
+#endif
