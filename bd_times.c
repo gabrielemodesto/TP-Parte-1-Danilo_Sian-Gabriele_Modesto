@@ -30,4 +30,9 @@ void carrega_times(BDTimes *bd, char *caminho) {
     fclose(f);
 }
 
-void 
+void imprimir_tabela(BDTimes *bd) {
+    printf("ID Time            V  E  D  GM GS S  PG\n");
+    for (int i = 0; i < bd->qtd; i++) {
+        dados_times(bd->times[i]);
+    }
+}
