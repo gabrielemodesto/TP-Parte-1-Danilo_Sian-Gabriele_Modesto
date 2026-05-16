@@ -24,7 +24,7 @@ void carrega_partidas(BDPartidas *bdp, BDTimes *bdt, char *caminho) {
             &bdp->partida[bdp->qtd].gols1,
             &bdp->partida[bdp->qtd].gols2) == 5)
         {
-            Partida p = bdp->partidas[bdp->qtd];
+            Partida p = bdp->partida[bdp->qtd];
             Time *t1 = &bdt->times[p.idTime1];
             Time *t2 = &bdt->times[p.idTime2];
             t1->gm += p.gols1;
@@ -57,30 +57,30 @@ void consulta_partidas(BDPartidas *bdp, BDTimes *bdt, char *nome, int modo) {
     int found = 0; //bandeira "flag". muda para 1 se encontrado o time
 
     for (int i = 0; i < bdp->qtd; i++) {
-        Partida p = bdp->partidas[i];
-        char nome1 = bdt->times[p->idTime1].nome;
-        char nome2 = bdt->times[p->idTime2].nome;
+        Partida p = bdp->partida[i];
+        char nome1 = bdt->times[p.idTime1].nome;
+        char nome2 = bdt->times[p.idTime2].nome;
 
         int match = 0; //muda de valor se der match
 
-        if (modo == 1 && strncasecmp(n1, nome, strlen(nome)) == 0) {
+        if (modo == 1 && strncasecmp(nome1, nome, strlen(nome)) == 0) {
             match = 1;
-        } else if (modo == 2 && strncasecmp(n2, nome, strlen(nome)) == 0)
+        } else if (modo == 2 && strncasecmp(nome2, nome, strlen(nome)) == 0)
         {
             match = 1;
-        } else if (modo == 3 && strncasecmp(n1, nome, strlen(nome)) == 0 || strncasecmp(n2, nome, strlen(nome))) {
+        } else if (modo == 3 && strncasecmp(nome1, nome, strlen(nome)) == 0 || strncasecmp(nome2, nome, strlen(nome))) {
             match = 1;
         }
 
         if (match) {
-            printf("%d %s %d x %d %s\n", p.id, n1, p.gols1, p.gols2, n2);
+            printf("%d %s %d x %d %s\n", p.id, nome1, p.gols1, p.gols2, nome2);
             found = 1;
         }
 
         
     }
     if (!found) {
-        printf("Nenhuma partida encontrada. \n")
+        printf("Nenhuma partida encontrada. \n");
     }
 
 

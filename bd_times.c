@@ -31,8 +31,21 @@ void carrega_times(BDTimes *bd, char *caminho) {
 }
 
 void imprimir_tabela(BDTimes *bd) {
+    int times_por_pagina = 5;
+
     printf("ID Time            V  E  D  GM GS S  PG\n");
     for (int i = 0; i < bd->qtd; i++) {
         dados_times(bd->times[i]);
+    
+    if ((i + 1) % times_por_pagina == 0 && (i + 1) < bd->qtd) { // Paginação da saida 
+    char pausa[10];
+    
+    printf("\n--- Pressione [ENTER] para ver a próxima página ---");
+    
+    
+    fgets(pausa, sizeof(pausa), stdin);
+    
+    printf("\n=== PRÓXIMA PÁGINA ===\n\n");
+    }
     }
 }
