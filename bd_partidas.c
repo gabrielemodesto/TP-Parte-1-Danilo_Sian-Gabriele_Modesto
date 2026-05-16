@@ -58,8 +58,8 @@ void consulta_partidas(BDPartidas *bdp, BDTimes *bdt, char *nome, int modo) {
 
     for (int i = 0; i < bdp->qtd; i++) {
         Partida p = bdp->partida[i];
-        char nome1 = bdt->times[p.idTime1].nome;
-        char nome2 = bdt->times[p.idTime2].nome;
+        char *nome1 = bdt->times[p.idTime1].nome;
+        char *nome2 = bdt->times[p.idTime2].nome;
 
         int match = 0; //muda de valor se der match
 

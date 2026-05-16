@@ -35,7 +35,7 @@ void imprimir_tabela(BDTimes *bd) {
 
     printf("ID Time            V  E  D  GM GS S  PG\n");
     for (int i = 0; i < bd->qtd; i++) {
-        dados_times(bd->times[i]);
+        dados_time(bd->times[i]);
     
     if ((i + 1) % times_por_pagina == 0 && (i + 1) < bd->qtd) { // Paginação da saida 
     char pausa[10];
