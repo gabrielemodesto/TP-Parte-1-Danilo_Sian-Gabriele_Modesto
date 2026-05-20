@@ -96,16 +96,16 @@ Máscaras de Formatação Fixa: Alinhamento estético homogêneo no terminal uti
 
 ##### Instruções para Execução
 Compilar o Projeto Execute o utilitário make na raiz do diretório para invocar o roteiro de compilação automática:
-
 ```Bash
 make
-Executar o Programa Após a geração bem-sucedida do executável binário, inicialize o sistema com o comando:
 ```
 
+Executar o Programa Após a geração bem-sucedida do executável binário, inicialize o sistema com o comando:
 ```Bash
 ./sistema
-Limpeza dos Arquivos Objeto Caso queira apagar os binários compilados e redefinir o diretório de trabalho, utilize:
 ```
+
+Limpeza dos Arquivos Objeto Caso queira apagar os binários compilados e redefinir o diretório de trabalho, utilize:
 ```Bash
 make clean
-```s
+```
