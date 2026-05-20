@@ -26,9 +26,10 @@ O projeto está organizado na raiz do diretório com a seguinte disposição de 
 
 O sistema foi estruturado de forma modular através de tipos abstratos de dados bem definidos:
 
-### `Time`
-Representa uma agremiação desportiva individual e encapsula os seus acumuladores numéricos de desempenho no campeonato.
-```c
+1. Time
+Representa uma agremiação desportiva unidade e encapsula os seus acumuladores numéricos de desempenho.
+
+C
 typedef struct {
     int id;
     char nome[50];
@@ -38,10 +39,10 @@ typedef struct {
     int gm; // Gols marcados
     int gs; // Gols sofridos
 } Time;
+2. Partida
+Estrutura elementar que representa uma linha do arquivo de confrontos, mapeando os times pelos seus respectivos IDs.
 
-### `Partida`
-Estrutura elementar que representa uma linha do arquivo de confrontos, mapeando as equipes envolvidas pelos seus respectivos IDs.
-```c
+C
 typedef struct {
     int id;
     int idTime1; // ID do time Mandante
@@ -49,6 +50,7 @@ typedef struct {
     int gols1;   // Gols do Mandante
     int gols2;   // Gols do Visitante
 } Partida;
+
 
 ### `BDTimes`
 TAD responsável pelo gerenciamento da coleção de clubes, controlando a persistência e as buscas na memória.
