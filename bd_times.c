@@ -43,7 +43,7 @@ void buscar_time(BDTimes *bd, char *prefixo) {
     for (int i = 0; i < bd->qtd; i++) {
         if (strncasecmp(bd->times[i].nome, prefixo, strlen(prefixo)) == 0) {
             if (!found) {
-                printf("ID Time                  V  E  D  GM GS  S PG\n");
+                printf("ID   Time         V   E   D  GM  GS   S PG\n");
             }
 
             dados_time(bd->times[i]);
@@ -63,7 +63,7 @@ void imprimir_tabela(BDTimes *bd) {
     while ((c = getchar()) != '\n' && c != EOF); // Limpando o Buffer
 
 
-    printf("ID Nome                    V  E  D  GM GS  S PG\n");
+    printf("ID   Time         V   E   D  GM  GS   S PG\n");
     for (int i = 0; i < bd->qtd; i++) {
         dados_time(bd->times[i]);
 
@@ -76,7 +76,7 @@ void imprimir_tabela(BDTimes *bd) {
     fgets(pausa, sizeof(pausa), stdin);
 
     printf("\n=== PRÓXIMA PÁGINA ===\n\n");
-    printf("ID Nome                    V  E  D  GM GS  S PG\n");
+    printf("ID   Time         V   E   D  GM  GS   S PG\n");
     }
     }
 }

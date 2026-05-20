@@ -13,7 +13,7 @@ int saldo_gols(Time t) {
 
 // Imprime uma linha da tabela com todos os dados do time.
 void dados_time(Time t) {
-    printf("%2d %-20s %2d %2d %2d %3d %2d %2d %2d\n",
+    printf("%-4d %-10s %3d %3d %3d %3d %3d %3d %2d\n",
            t.id,
            t.nome,
            t.v,
